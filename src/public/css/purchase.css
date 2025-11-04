@@ -1,0 +1,170 @@
+.purchase{
+    margin:0px auto 0px auto;
+    width:1245px;
+    display:flex;
+}
+
+.left{
+    margin-top:30px;
+    width:805px;
+}
+
+.left__area1{
+    width:805px;
+    height:230px;
+    display:flex;
+}
+
+.left__area1-image{
+    width:177.53px;
+    height:230px;
+    display:flex;
+    align-items: center;
+}
+
+.left__area1-image img{
+    width:177.53px;
+    height:177.53px;
+}
+
+.left__area1-item{
+    margin-left:50px;
+    width:326px;
+    height:177.53px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left__area1-itemName{
+    width:326px;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.left__area1-itemPrice{
+    width:326px;
+    font-size:30px;
+}
+
+.left__area2{
+    width:805px;
+    height:150px;
+}
+
+.left__area2-paymentMethod{
+    margin-left:50px;
+    width:326px;
+    height:85px;
+    font-size:20px;
+    font-weight: bold;
+    display:flex;
+    align-items: center;
+}
+
+.left__area2 select{
+    margin-left:80px;
+    width:265px;
+    height:31px;
+    font-size:16px;
+}
+
+.error{
+    margin-left:80px;
+    height:10px;
+    color:red;
+    font-size:16px;
+}
+
+
+.left__area3{
+    width:805px;
+    min-height:200px;
+}
+
+.left__area3-title{
+    margin-left:50px;
+    height:85px;
+    display:flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left__area3-address{
+    font-size:20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.left__area3-addressChange{
+    font-size:20px;
+    color:#0073CC;
+    background-color: white;
+    border:none;
+    text-align: right;
+}
+
+.left__area3-addressDetail{
+    margin-left:80px;
+    height:85px;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left__area3-addressDetail-text{
+    font-size:18px;
+}
+
+.right{
+    margin-top:30px;
+    margin-left:50px;
+    width:440px;
+}
+
+.right__area1{
+    width:440px;
+    height:230px;
+}
+
+.right__area1-table{
+    width:440px;
+    height:230px;
+}
+
+.right__area1-tr{
+    width:440px;
+    height:115px;
+    border:1px solid black;
+}
+
+.right__area1-title{
+    width:220px;
+    height:115px;
+    font-size:20px;
+}
+
+.right__area1-detail{
+    width:220px;
+    height:115px;
+    font-size:20px;
+}
+
+.right__area2{
+    width:440px;
+    height:60px;
+}
+
+.right__area2 button{
+    margin:50px 0px 0px 0px;
+    width:440px;
+    height:60px;
+    text-align:center;
+    border:none;
+    color:white;
+    font-size:26px;
+    font-weight:bold;
+    background-color: #FF5555;
+    border-radius:4px;
+}

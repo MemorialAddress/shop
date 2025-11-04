@@ -174,7 +174,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        // 20251020 追加開始
+        App\Providers\FortifyServiceProvider::class,
+        // 20251020 追加終了
     ],
 
     /*
