@@ -15,6 +15,7 @@ use App\Models\Items_comment;
 use App\Http\Requests\CommentRequest;
 use App\Http\Requests\AddressRequest;
 use App\Http\Requests\PurchaseRequest;
+use App\Http\Requests\UploadRequest;
 
 class ItemController extends Controller
 {
@@ -199,5 +200,21 @@ class ItemController extends Controller
         $userId = $request->user_id;
 
         return redirect()->route('items.index');
+    }
+
+    public function sell(Request $request)
+    {
+        return view('sell');
+    }
+
+    public function image(UploadRequest $request)
+    {
+        $file = $request->file('image');
+        $file_name = uniqid() . '.' . $file->getClientOriginalExtension();
+        $request->file('image')->storeAs('/public/image/item',$file_name);
+
+        session()->put('uploaded_file', $file_name);
+
+        return redirect()->back();
     }
 }

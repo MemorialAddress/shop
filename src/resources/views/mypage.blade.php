@@ -17,13 +17,13 @@
     <div class="tab">
         <form class="tab__recommend" action="/mypage" method="get">
             <input type="hidden" name="page" value="sell">
-            <button class="tab__recommend-button" style="color: {{ ($page ?? '') === 'sell' ? 'red' : '#5F5F5F' }}">
+            <button class="tab__recommend-button" style="color: {{ ($page ?? 'sell') === 'sell' ? 'red' : '#5F5F5F' }}">
                 出品した商品
             </button>
         </form>
         <form class="tab__mylist" action="/mypage" method="get">
             <input type="hidden" name="page" value="buy">
-            <button class="tab__mylist-button" style="color: {{ ($page ?? '') === 'buy' ? 'red' : '#5F5F5F' }}">
+            <button class="tab__mylist-button" style="color: {{ ($page ?? 'sell') === 'buy' ? 'red' : '#5F5F5F' }}">
                 購入した商品
             </button>
         </form>

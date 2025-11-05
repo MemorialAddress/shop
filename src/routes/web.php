@@ -38,8 +38,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/buy', [ItemController::class, 'buy']);
     Route::get('/mypage', [ItemController::class, 'mypage']);
     Route::get('/mypage/profile', [UsersAddController::class, 'setProfile'])->name('setProfile');
-    Route::get('/aupload', [UsersAddController::class, 'image'])->name('setProfile');
     Route::post('/upload', [UsersAddController::class, 'image']);
+    Route::get('/sell', [ItemController::class, 'sell']);
+    Route::post('/sell', [ItemController::class, 'sell']);
+    Route::post('/upload_item', [ItemController::class, 'image']);
     });
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
