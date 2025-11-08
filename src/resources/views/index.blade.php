@@ -34,7 +34,7 @@
                             <form action="/item/{{ $item->id }}" method="GET">
                                 <input type="hidden" name="id" value="{{ $item['id'] }}">
                                 <a href="{{ url('/item/'.$item->id) }}" class="table__td-card">
-                                    <img class="table__td-image" alt="{{ $item['item_name'] }}" src="storage/image/item/{{ $item['id'] }}.png">
+                                    <img class="table__td-image" alt="{{ $item['item_name'] }}" src="storage/image/item/{{ $item->image}}">
                                     <p class="table__td-name">
                                         @if(in_array($item->id, $purchasedItemIds))
                                             <span style="color:red">[Sold]</span>

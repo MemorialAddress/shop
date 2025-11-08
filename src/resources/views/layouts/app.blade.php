@@ -48,7 +48,7 @@
                 @csrf
                 <button class="header__link-button-button">マイページ</button>
             </form>
-            <form class="header__link-button2" action="/listing" method="post">
+            <form class="header__link-button2" action="/sell" method="post">
                 @csrf
                 <button class="header__link-button2-button2">出品</button>
             </form>

@@ -10,7 +10,7 @@
         <div class="left">
             <div class="left__area1">
                 <div class="left__area1-image">
-                    <img class="item__th-image" src="/storage/image/item/{{ $item->id }}.png">
+                    <img class="item__th-image" src="/storage/image/item/{{ $item->image}}">
                 </div>
                 <div class="left__area1-item">
                     <div class="left__area1-itemName">{{ $item->item_name }}</div><br>

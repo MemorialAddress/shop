@@ -10,7 +10,7 @@
     <table class="item">
         <tr>
             <th class="item__th">
-                <img class="item__th-image" src="/storage/image/item/{{ $item->id }}.png">
+                <img class="item__th-image" src="/storage/image/item/{{ $item->image}}">
             </th>
             <th class="item__th">
                 <p class="item__th-item-name">{{ $item -> item_name }}</p>
@@ -64,7 +64,9 @@
                     <tr class="item__sub2-tr">
                         <th class="item__sub2-categoryTitle">カテゴリー</th>
                         <th class="item__sub2-category">
+                            @if ( is_string($item->category1) && $item->category1 !== '')
                                 <span class="item__sub2-categoryName">{{ $item -> category1 }}</span>
+                            @endif
                             @if ( is_string($item->category2) && $item->category2 !== '')
                                 <span class="item__sub2-categoryName">{{ $item -> category2 }}</span>
                             @endif

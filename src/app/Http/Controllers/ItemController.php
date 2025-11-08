@@ -16,6 +16,7 @@ use App\Http\Requests\CommentRequest;
 use App\Http\Requests\AddressRequest;
 use App\Http\Requests\PurchaseRequest;
 use App\Http\Requests\UploadRequest;
+use App\Http\Requests\ExhibitionRequest;
 
 class ItemController extends Controller
 {
@@ -216,5 +217,48 @@ class ItemController extends Controller
         session()->put('uploaded_file', $file_name);
 
         return redirect()->back();
+    }
+
+    public function setSell(ExhibitionRequest $request)
+    {
+        if ($request->has('image')) {
+            session()->flash('uploaded_file', $request->image);
+        }
+
+        $categoryNames = [
+            1 => 'ファッション',
+            2 => '家電',
+            3 => 'インテリア',
+            4 => 'レディース',
+            5 => 'メンズ',
+            6 => 'コスメ',
+            7 => '本',
+            8 => 'ゲーム',
+            9 => 'スポーツ',
+            10 => 'キッチン',
+            11 => 'ハンドメイド',
+            12 => 'アクセサリー',
+            13 => 'おもちゃ',
+            14 => 'ベビー・キッズ',
+        ];
+
+        $item = $request->only(['user_id',
+                                'item_name',
+                                'brand_name',
+                                'price',
+                                'item_describe',
+                                'image',
+                                'condition']);
+
+        $selectedCategories = [];
+        foreach ($categoryNames as $id => $name) {
+            $item["category{$id}"] = $request->input("category{$id}") == '1' ? $name : null;
+        }
+
+        Item::create($item);
+
+        session()->forget('uploaded_file');
+
+        return redirect('/mypage');
     }
 }

@@ -42,6 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/sell', [ItemController::class, 'sell']);
     Route::post('/sell', [ItemController::class, 'sell']);
     Route::post('/upload_item', [ItemController::class, 'image']);
+    Route::post('/setSell', [ItemController::class, 'setSell']);
     });
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
