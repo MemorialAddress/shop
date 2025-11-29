@@ -1,10 +1,14 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+$app = require __DIR__ . '/../bootstrap/app.php';
 
-require_once __DIR__ . '/../vendor/autoload.php';
-//require_once __DIR__ . '/../secrets.php';
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+$kernel->bootstrap();
 
-$stripeSecretKey = 'REMOVED';
-\Stripe\Stripe::setApiKey($stripeSecretKey);
+use Stripe\Stripe;
+
+Stripe::setApiKey(env('STRIPE_SECRET'));
+
 header('Content-Type: application/json');
 
 $amount = isset($_GET['amount']) ? (int)$_GET['amount'] : null;

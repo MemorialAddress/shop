@@ -9,13 +9,12 @@ use App\Models\Purchase;
 
 class PurchaseController extends Controller
 {
+/*
     public function checkoutSuccess(Request $request)
     {
         $session_id = $request->query('session_id');
 
-        //Stripe::setApiKey(env('STRIPE_SECRET')); // .env に設定しておく
-        Stripe::setApiKey('REMOVED');
-
+        Stripe::setApiKey(env('STRIPE_SECRET')); // .env に設定しておく
         // Stripe Checkout セッションを取得
         $session = CheckoutSession::retrieve($session_id);
 
@@ -57,7 +56,7 @@ class PurchaseController extends Controller
 
         error_log("PaymentIntent processed: " . $paymentIntent->id);
     }
-
+*/
     public function handleWebhook(Request $request)
     {
         $payload = $request->getContent();
@@ -77,7 +76,7 @@ class PurchaseController extends Controller
 
             $paymentMethodType = $paymentIntent->payment_method_types[0] ?? 'unknown';
 
-            // 日本語名に変換（任意）
+            // 日本語名に変換
             switch ($paymentMethodType) {
                 case 'card':
                     $paymentMethodName = 'カード支払い';

@@ -1,16 +1,17 @@
 <?php
-require_once '../vendor/autoload.php';
-//require_once '../secrets.php';
+require __DIR__ . '/../vendor/autoload.php';
+$app = require __DIR__ . '/../bootstrap/app.php';
 
-$stripeSecretKey = 'REMOVED';
-\Stripe\Stripe::setApiKey($stripeSecretKey);
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+$kernel->bootstrap();
 
-\Stripe\Stripe::setApiKey($stripeSecretKey);
-// Replace this endpoint secret with your endpoint's unique secret
-// If you are testing with the CLI, find the secret by running 'stripe listen'
-// If you are using an endpoint defined with the API or dashboard, look in your webhook settings
-// at https://dashboard.stripe.com/webhooks
-$endpoint_secret = 'whsec_fe83c18d3a2e3ba240b58ccea07175023c6f1baa749b295c9898cf7a413b4623';
+use Stripe\Stripe;
+use Stripe\Webhook;
+
+Stripe::setApiKey(env('STRIPE_SECRET'));
+
+// Webhook のシークレットは .env に入れると安全です
+$endpoint_secret = env('STRIPE_WEBHOOK_SECRET');
 
 $payload = @file_get_contents('php://input');
 //テスト用に追加
