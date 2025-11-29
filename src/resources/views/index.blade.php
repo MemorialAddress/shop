@@ -9,12 +9,14 @@
 
     <div class="tab">
         <form class="tab__recommend" action="/" method="get">
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
             <button class="tab__recommend-button" style="color: {{ ($tab ?? '') === '' ? 'red' : '#5F5F5F' }}">
                 おすすめ
             </button>
         </form>
         <form class="tab__mylist" action="/" method="get">
             <input type="hidden" name="tab" value="mylist">
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
             <button class="tab__mylist-button" style="color: {{ ($tab ?? '') === 'mylist' ? 'red' : '#5F5F5F' }}">
                 マイリスト
             </button>

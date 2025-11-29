@@ -7,6 +7,8 @@
 @section('content')
     <title>商品一覧</title>
 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
     <table class="item">
         <tr>
             <th class="item__th">
@@ -36,7 +38,9 @@
                             @endif
                         </th>
                         </form>
-                        <th class="item__sub-image"><image src="/image/comment.png"></th>
+                        <th class="item__sub-image">
+                            <button class="item__sub-button"><image src="/image/comment.png"></button>
+                        </th>
                     </tr>
                     <tr class="item__sub-tr2">
                         <th class="item__sub-count">{{ \App\Models\Favorite::where('item_id', $item->id)->count() }}</th>

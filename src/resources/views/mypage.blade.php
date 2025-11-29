@@ -7,7 +7,9 @@
 @section('content')
     <title>プロフィール画面</title>
     <div class="user">
-        <img src="/storage/image/profile/{{ $userAdd->image}}">
+        @if ($userAdd)
+            <img src="/storage/image/profile/{{ $userAdd->image}}">
+        @endif
         <div class="user__name">{{ $users -> name }}</div>
         <form action="/mypage/profile" method="GET">
             <button>プロフィールを編集</button>

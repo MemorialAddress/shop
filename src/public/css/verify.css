@@ -1,0 +1,54 @@
+.header {
+    background-color: black;
+    width:auto;
+    height:82px;
+    display: flex;
+    align-items: center;
+}
+
+.header img{
+    background-color: black;
+    width:370px;
+    height:36.01px;
+}
+
+.message{
+    margin:150px auto auto auto;
+}
+
+.message__line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:24px;
+    font-weight:bold;
+
+}
+
+.button__here{
+    margin:50px auto auto auto;
+    width:257px;
+    height:69px;
+    padding:10px 10px 10px 10px;
+    font-size:24px;
+    font-weight:bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:10px;
+}
+
+.button__retry button{
+    margin:50px auto auto auto;
+    color:#0073CC;
+    background-color: white;
+    border:none;
+    font-size:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 850px) {
+    //none
+}

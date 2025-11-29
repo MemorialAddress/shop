@@ -34,7 +34,7 @@
 }
 
 .items table{
-    width:1013.01px;
+    width:auto;
     height:auto;
     margin:35px auto 35px auto;
 }
@@ -75,4 +75,52 @@
     text-align: left;
 }
 
+@media screen and (max-width: 850px) {
 
+.table__td-card{
+    display:flex;
+    flex-direction: column;
+    width:auto;
+    height:150px;
+    margin:0px 10px 0px 10px;
+    background-color: white;
+    border:none;
+    color:black;
+    text-decoration: none;
+}
+
+.table__td-image{
+    min-width:150px;
+    min-height:150px;
+    max-width:150px;
+    max-height:150px;
+    background-color: #D9D9D9;
+}
+.table__td-image img{
+    width:150px;
+    height:150px;
+    background-color: #D9D9D9;
+    object-fit: cover;
+}
+.items table{
+    width:auto;
+    height:auto;
+    margin:35px auto 35px auto;
+}
+
+.table__tr{
+    width:auto;
+    height:200px;
+    display:flex;
+    margin:35px 0px 0px 0px;
+}
+.table__td-name{
+    width:150px;
+    font-size:16px;
+    font-weight:400px;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+}

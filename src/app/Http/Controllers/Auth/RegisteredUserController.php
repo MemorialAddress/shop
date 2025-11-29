@@ -21,6 +21,8 @@ class RegisteredUserController extends Controller
     {
         $user = $this->createNewUser->create($request->all());
         auth()->login($user);
-        return redirect()->route('profile.set');
+        //return redirect()->route('profile.set');
+        //$user->sendEmailVerificationNotification();
+        return redirect()->route('verification.notice');
     }
 }

@@ -168,3 +168,13 @@
     background-color: #FF5555;
     border-radius:4px;
 }
+
+@media screen and (max-width: 850px) {
+
+.purchase{
+    width:auto;
+    display:flex;
+    flex-direction: column;
+}
+
+}
