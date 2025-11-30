@@ -87,5 +87,4 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 //stripe
 Route::get('/checkout', [StripeController::class, 'checkout']);
-//Route::get('/purchase/success', [PurchaseController::class, 'checkoutSuccess']);
 Route::post('/webhook', [PurchaseController::class, 'handleWebhook']);
