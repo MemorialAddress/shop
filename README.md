@@ -12,8 +12,7 @@
 
 - Laravel パッケージのインストール
   $ docker-compose exec php bash
-
-  # composer install
+  ＃ composer install
 
 - 環境定義ファイル作成
   $ cp .env.example .env
@@ -47,3 +46,13 @@
    stripe/stripe-cli listen \
    --forward-to http://host.docker.internal/webhook \
    --api-key 「基本設計書（生徒様入力用）」に記載の文字列を転記(ダブルコーテーション不要)
+
+## テストユーザー
+
+・メールアドレス：test1@example.com パスワード：password
+・メールアドレス：test2@example.com パスワード：password
+・メールアドレス：test3@example.com パスワード：password
+
+## ER 図
+
+![alt text](image-1.png)
