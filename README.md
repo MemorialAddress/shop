@@ -53,6 +53,20 @@
 ・メールアドレス：test2@example.com パスワード：password
 ・メールアドレス：test3@example.com パスワード：password
 
+## 使用技術
+
+PHP：8.1.33
+MySQL:8.0.26
+Laravel:12.41.1
+Stripe
+mailhog
+
 ## ER 図
 
 ![alt text](image-1.png)
+
+## URL
+
+・開発環境： http://localhost/
+・phpMyAdmin： http://localhost:8080/
+・Mailhog： http://localhost:8025/
