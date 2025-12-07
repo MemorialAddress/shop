@@ -70,3 +70,7 @@ mailhog
 ・開発環境： http://localhost/
 ・phpMyAdmin： http://localhost:8080/
 ・Mailhog： http://localhost:8025/
+
+## PHPUnit テストコマンド
+
+1.会員登録機能　# vendor/bin/phpunit tests/Feature/RegisteTest.php 2.ログイン機能　# vendor/bin/phpunit tests/Feature/LoginTest.php 3.ログアウト機能　# vendor/bin/phpunit tests/Feature/LogoutTest.php 4.商品一覧取得　# vendor/bin/phpunit tests/Feature/IndexTest.php 5.マイリスト一覧取得　# vendor/bin/phpunit tests/Feature/MylistTest.php 6.商品検索機能　# vendor/bin/phpunit tests/Feature/ItemsearchTest.php 7.商品詳細情報取得　# vendor/bin/phpunit tests/Feature/ItemdetailTest.php 8.いいね機能　# vendor/bin/phpunit tests/Feature/FavoriteTest.php 9.コメント送信機能　# vendor/bin/phpunit tests/Feature/CommnetTest.php 10.商品購入機能　# vendor/bin/phpunit tests/Feature/PurchaseTest.php 11.支払い方法選択機能　# vendor/bin/phpunit tests/Feature/PaymentTest.php 12.配送先変更機能　# vendor/bin/phpunit tests/Feature/AddressTest.php 13.ユーザー情報取得　# vendor/bin/phpunit tests/Feature/ProfileTest.php 14.ユーザー情報変更　# vendor/bin/phpunit tests/Feature/ProfileTest.php 15.出品商品情報登録　# vendor/bin/phpunit tests/Feature/SellTest.php 16.メール認証機能　# vendor/bin/phpunit tests/Feature/MailTest.php
