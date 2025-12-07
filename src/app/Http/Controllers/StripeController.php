@@ -14,7 +14,7 @@ class StripeController extends Controller
 
         $session = Session::create([
             'line_items' => [[
-                'price' => 'price_xxxxxxx', // ← ここにあなたのPRICE_ID
+                'price' => 'price_xxxxxxx',
                 'quantity' => 1,
             ]],
             'mode' => 'payment',

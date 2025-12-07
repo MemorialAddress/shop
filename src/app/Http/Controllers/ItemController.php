@@ -135,7 +135,20 @@ class ItemController extends Controller
         $item_comment = $request->only(['item_id', 'user_id', 'comment']);
         Items_comment::create($item_comment);
 
-        return $this->itemDetail($itemId);
+        $item = Item::where('id', $itemId)->first();
+        $favorite = Favorite::where('user_id', $userId)
+                            ->where('item_id', $itemId)
+                            ->first();
+        $item_comment = Items_comment::where('item_id', $itemId)->get();
+        $purchasedItemIds = Purchase::pluck('item_id')->toArray();
+
+        return redirect("/item/{$item->id}")
+            ->with([
+            'item' =>$item,
+            'favorite' => $favorite,
+            'item_comment' => $item_comment,
+            'purchasedItemIds' => $purchasedItemIds,
+        ]);
     }
 
     public function purchase(Request $request)

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <title>商品一覧</title>
+    <title>商品購入</title>
     <div class="purchase">
         <div class="left">
             <div class="left__area1">

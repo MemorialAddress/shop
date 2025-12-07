@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <title>商品一覧</title>
+    <title>商品詳細</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 

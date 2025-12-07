@@ -28,6 +28,7 @@ class PurchaseController extends Controller
 
             $paymentMethodType = $paymentIntent->payment_method_types[0] ?? 'unknown';
 
+            // 日本語名に変換
             switch ($paymentMethodType) {
                 case 'card':
                     $paymentMethodName = 'カード支払い';
