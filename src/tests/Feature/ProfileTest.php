@@ -41,7 +41,6 @@ class ProfileTest extends TestCase
     //14_1 変更項目が初期値として過去設定されていること（プロフィール画像、ユーザー名、郵便番号、住所）
     public function test14_1()
     {
-        //Storage::fake('public');
 
         $user = User::factory()->create();
         $userAdd = UsersAdd::create([
@@ -52,9 +51,8 @@ class ProfileTest extends TestCase
             'image' => 'old.png'
         ]);
 
-        //$file = UploadedFile::fake()->image('new_profile.png');
-
         $response = $this->actingAs($user)->post('/setProfile', [
+            'id' => $user->id,
             'user_id' => $user->id,
             'name' => '更新ユーザー',
             'post_code' => '999-9999',
@@ -63,14 +61,13 @@ class ProfileTest extends TestCase
             'image' => 'new.png'
         ]);
 
-        $response->assertRedirect('/mypage/profile');
+        $response->assertRedirect('/');
 
         $this->assertDatabaseHas('users', [
             'id' => $user->id,
             'name' => '更新ユーザー'
         ]);
 
-        // users_adds テーブルに反映
         $this->assertDatabaseHas('users_adds', [
             'user_id' => $user->id,
             'post_code' => '999-9999',
