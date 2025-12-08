@@ -40,12 +40,14 @@
 - シンボリックリンク設定
   ＃ php artisan storage:link
 
-- Stripe 決済使用時は以下コマンドでコンテナ起動すること
+- Stripe 決済使用時は以下コマンドでコンテナ起動すること（決済完了でもって購入完了となる）
   $ docker run -it --rm --network host \
    -v $PWD:/workspace -w /workspace \
    stripe/stripe-cli listen \
    --forward-to http://host.docker.internal/webhook \
    --api-key 「基本設計書（生徒様入力用）」に記載の文字列を転記(ダブルコーテーション不要)
+  ※カード払いの場合、カード番号は「4242424242424242」を入力すること。
+  　コンビニ払いの場合、「支払う」押下後、約３分後に自動的に決済完了となる。
 
 ## テストユーザー
 
